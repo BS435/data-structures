@@ -5,7 +5,7 @@ using namespace std;
 int top = -1;
 int stack[MAX];
 
-bool is_empty() {
+bool stack_is_empty() {
     if (top == -1) {
         return true;
     } else {
@@ -13,7 +13,7 @@ bool is_empty() {
     }
 }
 
-bool is_full() {
+bool stack_is_full() {
     if (top == MAX - 1) {
         return true;
     } else {
@@ -22,7 +22,7 @@ bool is_full() {
 }
 
 void push(int data) {
-    if (is_full()) {
+    if (stack_is_full()) {
         cout << "Overflow - Stack is full" << endl;
     } else {
         top++;
@@ -31,7 +31,7 @@ void push(int data) {
 }
 
 int pop() {
-    if (is_empty()) {
+    if (stack_is_empty()) {
         cout << "Underflow - Stack is empty" << endl;
         return -1;
     } else {
